@@ -6,6 +6,7 @@ Menu::Menu(QWidget *parent) :
     ui(new Ui::Menu)
 {
     ui->setupUi(this);
+    ui->radio_forwar->setVisible(false);
 }
 
 std::list<Instrucao> Menu::listagem(QString file)
@@ -39,6 +40,10 @@ std::list<Instrucao> Menu::listagem(QString file)
     catch(QString &erro){
         throw erro;
     }
+    ui->radio_forwar->setEnabled(0);
+
+
+
 
 
 
@@ -47,4 +52,26 @@ std::list<Instrucao> Menu::listagem(QString file)
 Menu::~Menu()
 {
     delete ui;
+}
+
+
+
+void Menu::on_radio_in_in_clicked(bool checked)
+{
+    ui->radio_forwar->setVisible(checked);
+    tipo=1;
+
+}
+
+void Menu::on_radio_in_out_clicked(bool checked)
+{
+    ui->radio_forwar->setVisible(checked);
+    tipo=2;
+}
+
+void Menu::on_radio_out_out_clicked(bool checked)
+{
+    ui->radio_forwar->setVisible(!checked);
+    tipo=0;
+
 }

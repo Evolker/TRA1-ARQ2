@@ -22,10 +22,20 @@ public:
     std::list<Instrucao> listagem(QString file);
     ~Menu();
 
+private slots:
+
+
+
+    void on_radio_in_in_clicked(bool checked);
+
+    void on_radio_in_out_clicked(bool checked);
+
+    void on_radio_out_out_clicked(bool checked);
+
 private:
     Ui::Menu *ui;
     std::list<Instrucao>  list;
-
+    int tipo; // 0=IN-IN ,1=IN-OUT, 2=IN-IN
 };
 
 #endif // MENU_H
