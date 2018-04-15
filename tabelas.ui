@@ -34,19 +34,52 @@
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QComboBox" name="comboBox"/>
+     <widget class="QComboBox" name="Box_tabelas">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>IF</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>EX</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Todos</string>
+       </property>
+      </item>
+     </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QFontComboBox" name="fontComboBox"/>
-    </item>
-    <item row="0" column="2">
      <widget class="QLabel" name="label_SCHEDULER">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>SCHEDULER</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="3">
+    <item row="0" column="2">
      <widget class="QLineEdit" name="lineEdit_SCHEDULER"/>
     </item>
    </layout>

@@ -7,6 +7,7 @@
 #include<list>
 #include<QTableWidget>
 #include<QTableWidgetItem>
+#include<QMessageBox>
 
 namespace Ui {
 class Tabelas;
@@ -25,6 +26,9 @@ public:
     void transform_into_table(std::list<QString> str,QTableWidget *Obj);
 
     void clear_tables();
+
+private slots:
+
 
 private:
     Ui::Tabelas *ui;

@@ -8,7 +8,7 @@
 #include <cstring>
 #include <instrucao.h>
 #include <list>
-#include <resultado.h>
+#include <tabelas.h>
 
 namespace Ui {
 class Menu;
@@ -39,7 +39,7 @@ private:
     Ui::Menu *ui;
     bool in_in,in_out,out_out,forwarding;
     std::list<Instrucao>  list;
-    Resultado  janela_de_resutado;
+    Tabelas  janela_de_resutado;
 
 };
 

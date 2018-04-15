@@ -20,8 +20,9 @@ void Tabelas::set(std::list<QString> If, std::list<QString> Id, std::list<QStrin
     this->transform_into_table(Ex,&EX);
     this->transform_into_table(w,&W);
 
-   // ui->label_SCHEDULER->setVisible(false);
-    //ui->lineEdit_SCHEDULER->setVisible(false);
+    ui->label_SCHEDULER->setVisible(false);
+    ui->lineEdit_SCHEDULER->setVisible(false);
+  //  ui->Box_tabelas->
 
 }
 
