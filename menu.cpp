@@ -126,7 +126,7 @@ void Menu::on_Button_gera_clicked()
     }
 
 
-     janela_de_resutado.setModal(true);
+     //janela_de_resutado.setModal(true);
      this->hide();
      janela_de_resutado.exec();
      this->show();
