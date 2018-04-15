@@ -6,7 +6,18 @@ Menu::Menu(QWidget *parent) :
     ui(new Ui::Menu)
 {
     ui->setupUi(this);
-    ui->radio_forwar->setVisible(false);
+    ui->check_forwarding->setChecked(false);
+    ui->check_forwarding->setVisible(false);
+    ui->radio_in_in->setChecked(false);
+    ui->radio_in_out->setChecked(false);
+    ui->radio_out_out->setChecked(true);
+    in_in=in_out=forwarding=false;
+    out_out=true;
+
+    ui->spinBox_if->setRange(1,100);
+    ui->spinBox_id->setRange(1,100);
+    ui->spinBox_ex->setRange(1,100);
+    ui->spinBox_w->setRange(1,100);
 }
 
 std::list<Instrucao> Menu::listagem(QString file)
@@ -40,10 +51,6 @@ std::list<Instrucao> Menu::listagem(QString file)
     catch(QString &erro){
         throw erro;
     }
-    ui->radio_forwar->setEnabled(0);
-
-
-
 
 
 
@@ -52,26 +59,75 @@ std::list<Instrucao> Menu::listagem(QString file)
 Menu::~Menu()
 {
     delete ui;
+
 }
 
 
 
 void Menu::on_radio_in_in_clicked(bool checked)
 {
-    ui->radio_forwar->setVisible(checked);
-    tipo=1;
-
+    ui->check_forwarding->setVisible(checked);
+    in_in=checked;
 }
 
 void Menu::on_radio_in_out_clicked(bool checked)
 {
-    ui->radio_forwar->setVisible(checked);
-    tipo=2;
+   ui->check_forwarding->setVisible(checked);
+    in_in=checked;
 }
+
 
 void Menu::on_radio_out_out_clicked(bool checked)
 {
-    ui->radio_forwar->setVisible(!checked);
-    tipo=0;
+   ui->check_forwarding->setVisible(!checked);
+    in_in=checked;
 
+}
+
+
+void Menu::on_check_forwarding_toggled(bool checked)
+{
+    forwarding=checked;
+}
+
+void Menu::on_Button_gera_clicked()
+{
+
+    janela_de_resutado.clear_tables();
+
+    if(in_in)//Iron
+    {
+        if(forwarding)
+        {
+            //janela_de_resutado.set();
+        }
+       else
+        {
+            //janela_de_resutado.set();
+        }
+
+    }
+    else if(in_out)//Eduardo
+    {
+        if(forwarding)
+        {
+            //janela_de_resutado.set();
+        }
+       else
+        {
+            //janela_de_resutado.set();
+        }
+    }
+    else//Aurélio
+    {
+
+            //janela_de_resutado.set();
+
+    }
+
+
+     janela_de_resutado.setModal(true);
+     this->hide();
+     janela_de_resutado.exec();
+     this->show();
 }

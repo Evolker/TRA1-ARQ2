@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Resultado</class>
+ <widget class="QDialog" name="Resultado">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>668</width>
+    <height>379</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>621</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QFontComboBox" name="fontComboBox"/>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="label_SCHEDULER">
+      <property name="text">
+       <string>SCHEDULER</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLineEdit" name="lineEdit_SCHEDULER"/>
+    </item>
+    <item row="1" column="0" colspan="4">
+     <widget class="QTableWidget" name="tabela_de_exe"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -8,6 +8,7 @@
 #include <cstring>
 #include <instrucao.h>
 #include <list>
+#include <resultado.h>
 
 namespace Ui {
 class Menu;
@@ -24,18 +25,22 @@ public:
 
 private slots:
 
-
-
     void on_radio_in_in_clicked(bool checked);
 
     void on_radio_in_out_clicked(bool checked);
 
     void on_radio_out_out_clicked(bool checked);
 
+    void on_check_forwarding_toggled(bool checked);
+
+    void on_Button_gera_clicked();
+
 private:
     Ui::Menu *ui;
+    bool in_in,in_out,out_out,forwarding;
     std::list<Instrucao>  list;
-    int tipo; // 0=IN-IN ,1=IN-OUT, 2=IN-IN
+    Resultado  janela_de_resutado;
+
 };
 
 #endif // MENU_H
