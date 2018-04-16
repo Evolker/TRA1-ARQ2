@@ -24,16 +24,23 @@ public:
     void set(std::list<QString> If,std::list<QString> Id,std::list<QString> Ex,std::list<QString> w);
     void set(std::list<QString> If,std::list<QString> Id,std::list<QString> Ex,std::list<QString> w,QString Scheduler);
     void transform_into_table(std::list<QString> str,QTableWidget *Obj);
+    QTableWidget * t_table(QTableWidget *Obj);
+
+
+
 
     void clear_tables();
 
 private slots:
 
 
+    void on_Box_tabelas_activated(int index);
+
 private:
     Ui::Tabelas *ui;
     QString  SCHEDULER;
-    QTableWidget IF,ID,EX,W;
+    QTableWidget *IF,*ID,*EX,*W;
+    QTableWidget * aux_table;
 };
 
 #endif // TABELAS_H

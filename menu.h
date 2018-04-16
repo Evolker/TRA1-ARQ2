@@ -22,7 +22,6 @@ public:
     explicit Menu(QWidget *parent = 0);
     std::list<Instrucao> listagem(QString file);
     ~Menu();
-
 private slots:
 
     void on_radio_in_in_clicked(bool checked);
@@ -38,7 +37,7 @@ private slots:
 private:
     Ui::Menu *ui;
     bool in_in,in_out,out_out,forwarding;
-    std::list<Instrucao>  list;
+    std::list<Instrucao>  lista;
     Tabelas  janela_de_resutado;
 
 };
