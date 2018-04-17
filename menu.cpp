@@ -18,19 +18,35 @@ Menu::Menu(QWidget *parent) :
     ui->spinBox_id->setRange(1,100);
     ui->spinBox_ex->setRange(1,100);
     ui->spinBox_w->setRange(1,100);
+
+    std::list<Instrucao> lista_i=this->listagem("a.txt");
+    std::list<Instrucao>::iterator it=lista_i.begin();
+    Instrucao aux;
+    while(it!=lista_i.end())
+    {
+
+        aux=*it;
+        lista.insert(std::pair<int,Instrucao>(aux.getId(),aux));
+
+    }
 }
 
 std::list<Instrucao> Menu::listagem(QString file)
 {
-    try{
+
     std::list<Instrucao> lista ;
 
         std::ifstream arquivo;
         arquivo.open(file.toStdString().c_str(),std::ios::in);
         if (!arquivo.is_open())
         {
-            arquivo.close();
-            throw QString("Erro, arquivo de instruções não encontrado!");
+            std::ofstream arquivoa(file.toStdString());
+            if (!arquivoa.is_open())
+            {
+               arquivoa.close();
+
+            }
+
         }
         std::string linha;
 
@@ -47,10 +63,7 @@ std::list<Instrucao> Menu::listagem(QString file)
 
            return lista;
 
-    }
-    catch(QString &erro){
-        throw erro;
-    }
+
 
 
 
@@ -116,6 +129,9 @@ void Menu::on_Button_gera_clicked()
        else
         {
             //janela_de_resutado.set();
+
+
+            //janela_de_resutado.set()
         }
     }
     else//Aurélio
@@ -125,9 +141,16 @@ void Menu::on_Button_gera_clicked()
 
     }
 
-
      //janela_de_resutado.setModal(true);
      this->hide();
      janela_de_resutado.exec();
      this->show();
 }
+
+//void Menu::Out_Out(std::map<int, Instrucao> A, int n_if, int n_id, int n_ex, int n_if )
+//{
+   //std::vector<vector<int>>
+
+
+
+//}

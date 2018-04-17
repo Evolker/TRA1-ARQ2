@@ -17,6 +17,8 @@ public:
     Instrucao();
 
     void operator=( Instrucao A);
+    //void operator ++(Instrucao &A);
+   // void operator --(Instrucao &A);
 
     void MontarObjeto(QString str);
 

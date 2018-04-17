@@ -9,6 +9,7 @@
 #include <instrucao.h>
 #include <list>
 #include <tabelas.h>
+#include<map>
 
 namespace Ui {
 class Menu;
@@ -34,10 +35,13 @@ private slots:
 
     void on_Button_gera_clicked();
 
+    //void Out_Out(std::map<int,Instrucao> A, int n_if, int n_id, int n_ex, int n_if);
+
 private:
     Ui::Menu *ui;
     bool in_in,in_out,out_out,forwarding;
-    std::list<Instrucao>  lista;
+   // std::list<Instrucao>  lista;
+    std::map<int,Instrucao> lista;
     Tabelas  janela_de_resutado;
 
 };

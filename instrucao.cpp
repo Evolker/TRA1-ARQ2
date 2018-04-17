@@ -18,11 +18,21 @@ void Instrucao::operator=(Instrucao A)
 
 }
 
+//void Instrucao::operator++(Instrucao &A)
+//{
+   // A.num_dependencias++;
+//}
+
+//void Instrucao::operator --(Instrucao &A)
+//{
+   // A.num_dependencias--;
+//}
+
 
 void Instrucao::MontarObjeto(QString str)
 {
     QStringList lista = str.split(':');
-    if(lista.size()!=2) throw QString("Linha inválida! -Pessoa \n");
+    //if(lista.size()!=2) throw QString("Linha inválida! -Pessoa \n");
 
     id=tranforma(lista[0]);
 
